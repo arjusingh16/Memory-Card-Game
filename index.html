@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Memory Game — Advanced</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="header">
+    <h1>Memory Match</h1>
+
+    <div class="controls">
+      <label>
+        Level:
+        <select id="levelSelect">
+          <option value="easy">Easy (4 pairs)</option>
+          <option value="medium" selected>Medium (8 pairs)</option>
+          <option value="hard">Hard (12 pairs)</option>
+        </select>
+      </label>
+
+      <label class="toggle">
+        <input type="checkbox" id="imageToggle" />
+        Use Images
+      </label>
+
+      <button id="restartBtn" class="primary">Restart</button>
+    </div>
+  </header>
+
+  <main class="main">
+    <section class="topbar">
+      <div>Score: <span id="score">0</span></div>
+      <div>Moves: <span id="moves">0</span></div>
+      <div>Time: <span id="time">0</span>s</div>
+    </section>
+
+    <section id="gameArea" class="game-area">
+      <!-- cards go here -->
+    </section>
+
+    <section class="bottom">
+      <div class="leaderboard-panel">
+        <h3>Leaderboard</h3>
+        <div class="leaderboard-tabs">
+          <button data-level="easy" class="lb-tab">Easy</button>
+          <button data-level="medium" class="lb-tab active">Medium</button>
+          <button data-level="hard" class="lb-tab">Hard</button>
+        </div>
+        <ol id="leaderboardList" class="leaderboard-list"></ol>
+        <button id="clearLeaderboard" class="danger">Clear Leaderboard</button>
+      </div>
+
+      <div class="instructions">
+        <h3>How to play</h3>
+        <ul>
+          <li>Click two cards to flip. Match pairs to keep them open.</li>
+          <li>Try to finish with the highest score and fewest moves.</li>
+          <li>When you win you'll be asked to save your name to the leaderboard.</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <!-- Win modal (simple) -->
+  <div id="winModal" class="modal" aria-hidden="true">
+    <div class="modal-card">
+      <h2>🎉 You Win!</h2>
+      <p>Time: <span id="finalTime">0</span>s | Moves: <span id="finalMoves">0</span> | Score: <span id="finalScore">0</span></p>
+      <label>
+        Enter name to save:
+        <input id="playerName" type="text" maxlength="20" placeholder="Your name" />
+      </label>
+      <div class="modal-actions">
+        <button id="saveScoreBtn" class="primary">Save Score</button>
+        <button id="closeModalBtn" class="secondary">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
