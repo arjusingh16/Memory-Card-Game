@@ -66,4 +66,4 @@ Memory-Card-Game/
 └── images/           # Card images/icons
 
 👩‍💻 Author
-Arju Singh GitHub: www//gitHub.com/arjusingh16
+Arju Singh GitHub: https://github.com/arjusingh16
